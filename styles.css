@@ -4,13 +4,18 @@ body {
 
 h1 {
     font-size: 40px;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
-h1, .bio, .blog, .girlfriend{
+h1, .bio, .blog, .girlfriend, .headshot, .links, .outro {
     text-align: center;
 }
 
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; 
+}
 
 a {
     color: black;
@@ -28,17 +33,11 @@ a:active {
     color: blue;
 }
 
-.images img {
+.headshot img {
     display: block;
-    height: 500px;
+    height: 200px;
     padding: 30px;
     margin-left: auto;
     margin-right: auto;
 }
 
-video {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 500px; 
-}
