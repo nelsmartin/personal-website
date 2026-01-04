@@ -37,14 +37,16 @@ export default function Page() {
                 {matrix.map((value, index) => (
                   <button
                     key={index}
-                    onPointerOver={() => toggle(index)}
-                    onClick={() => toggle(index)}
+                    onMouseEnter={() => toggle(index)}
+                    onTouchStart={() => toggle(index)}
+
                   >
                     <Image
                     src={imageInit(index, value)}
                     alt="Truchet tile"
                     height={100}
                     width={100}
+                    draggable={false}
                     />
                   </button>
                 ))}
