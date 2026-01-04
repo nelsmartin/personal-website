@@ -1,69 +1,41 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
+const FACE_COUNT = 1479;
 
 export default function Home() {
-  return (
-    <main className="flex flex-col items-center space-y-5 mt-10 justify-center">
-      
-        <h1 className="text-8xl">
-          Willem&apos;s <span className="italic font-bold">Spunky</span> Website
-        </h1>      
-        <h2 className="text-xl max-w-50 text-center">
-          Willem is a sophmore at the University of Montana studying integrated lens-based media. 
-        </h2>
-        
+  const [matrix, setMatrix] = useState<boolean[]>(
+    () => Array(FACE_COUNT).fill(false)
+  );
+  const [scroll, setScroll] = useState(0)
 
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMatrix(prev => prev.map(() => false));
+      }
+    };
 
-        <div className="max-w-xl">
-          <Image
-            src="/willemTable.jpeg"
-            alt=""
-            width={1088}
-            height={1088}
-            className="w-full h-auto"
-          />
-        </div>
-        <div className="flex flex-wrap space-x-5 justify-center">
-          <Image
-              src="/nelsBall.jpeg"
-              alt=""
-              width={4160}
-              height={5157}
-              className="h-96 w-auto"
-            />
-            <Image
-              src="/willemTwo.jpeg"
-              alt=""
-              width={3024}
-              height={4032}
-              className="h-96 w-auto"
-            />
-            
-      </div>
-      <div className="flex flex-wrap space-x-5 justify-center">
-<Image
-              src="/willemBeef.jpeg"
-              alt=""
-              width={3024}
-              height={4032}
-              className="h-96 w-auto"
-            />
-      <Image
-              src="/willemBed.jpeg"
-              alt=""
-              width={4032}
-              height={3024}
-              className="h-96 w-auto"
-            />
-      
-
-      </div>
-      
     
-    </main>
 
+    window.addEventListener("keydown", down);
 
+    return () => {
+      window.removeEventListener("keydown", down);
+    };
+  }, []);
 
+  useEffect(() => {
+    const scroll = () => setScroll(window.scrollY)
+    window.addEventListener("scroll", scroll)
+  }, [])
+ 
+
+  return (
+    <div className="w-full min-h-screen flex flex-col justify-center items-center mb-200 ">
+      <p>{scroll}</p>
+    </div>
   );
 }
-
