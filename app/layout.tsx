@@ -19,7 +19,7 @@ const jost = Jost({
 
 export const metadata: Metadata = {
   title: "Nels Martin",
-  description: "Nels Martin's Personal Website."
+  description: "Nels Martin's Personal Website.",
 };
 
 export default function RootLayout({

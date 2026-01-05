@@ -9,13 +9,16 @@ export const metadata: Metadata = {
   description: "Interactive tile patterns",
   openGraph: {
     title: "Truchet Tiles",
-    description: "Interactive tile patterns",
+    description:
+      "Interactive Truchet Tiles that can be rotated to create intricate patterns. Mouse or drag over the tiles to see them change.",
     url: "https://nelsmartin.com/tiles",
+    authors: "Nels Martin",
+    publishedTime: "1/4/2026",
     images: [
       {
         url: "https://nelsmartin.com/tiles-preview.jpeg",
-        width: 882,
-        height: 882,
+        width: 1200,
+        height: 630,
         alt: "Tiles preview",
       },
     ],
