@@ -9,9 +9,9 @@ const CARD_COUNT_DESKTOP = 169; // 13x13
 export default function Page() {
   const [isMobile, setIsMobile] = useState(false);
   const cardCount = isMobile ? CARD_COUNT_MOBILE : CARD_COUNT_DESKTOP;
-  
+
   const [matrix, setMatrix] = useState<boolean[]>(() =>
-    Array(CARD_COUNT_DESKTOP).fill(false)
+    Array(CARD_COUNT_DESKTOP).fill(false),
   );
   const [isPointerDown, setIsPointerDown] = useState(false);
   const toggledTilesRef = useRef<Set<number>>(new Set());
@@ -21,11 +21,11 @@ export default function Page() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 640);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
@@ -72,15 +72,15 @@ export default function Page() {
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isPointerDown) return;
-    
+
     e.preventDefault();
     const touch = e.touches[0];
     const element = document.elementFromPoint(touch.clientX, touch.clientY);
-    
+
     if (element) {
-      const button = element.closest('button');
+      const button = element.closest("button");
       if (button) {
-        const index = parseInt(button.getAttribute('data-index') || '-1');
+        const index = parseInt(button.getAttribute("data-index") || "-1");
         if (index >= 0 && !toggledTilesRef.current.has(index)) {
           toggledTilesRef.current.add(index);
           toggle(index);
@@ -89,14 +89,14 @@ export default function Page() {
     }
   };
 
-  const imageInit = (index : number, value: boolean) => {
-      if (index % 2 == 0) {
-        if (value) return "/tileLeftNormal.svg"
-        return "/tileRightInverted.svg"
-      }
-      if (value) return "/tileLeftInverted.svg"
-      return "/tileRightNormal.svg"
-    } 
+  const imageInit = (index: number, value: boolean) => {
+    if (index % 2 == 0) {
+      if (value) return "/tileLeftNormal.svg";
+      return "/tileRightInverted.svg";
+    }
+    if (value) return "/tileLeftInverted.svg";
+    return "/tileRightNormal.svg";
+  };
 
   return (
     <main className="min-h-screen w-full flex flex-col bg-blue-200">
@@ -107,15 +107,10 @@ export default function Page() {
           </p>
         </Link>
       </div>
-      <p className="sm:text-xl px-4">
-        Desktop: mouse over the tiles.
-      </p>
-      <p className="sm:text-xl px-4">
-        Mobile: tap and drag over the tiles. 
-
-      </p>
+      <p className="sm:text-xl px-4">Desktop: mouse over the tiles.</p>
+      <p className="sm:text-xl px-4">Mobile: tap and drag over the tiles.</p>
       <div className="flex justify-center">
-        <div 
+        <div
           ref={gridRef}
           className="grid grid-cols-7 sm:grid-cols-13 place-items-center w-2xl justify-center touch-none"
           onTouchMove={handleTouchMove}
@@ -141,5 +136,3 @@ export default function Page() {
     </main>
   );
 }
-    
-    
