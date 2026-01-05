@@ -19,24 +19,7 @@ const jost = Jost({
 
 export const metadata: Metadata = {
   title: "Nels Martin",
-  description: "Nels Martin's Personal Website.",
-  openGraph: {
-    title: 'Nels Martin',
-    description: 'Nels Martin Personal Website',
-    url: 'https://nelsmartin.com',
-    siteName: 'Nels Martin',
-    images: [
-      {
-        url: 'https://nelsmartin.com/og-image.jpeg', // Must be absolute URL
-        width: 882,
-        height: 882,
-        alt: 'Preview image description',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-
+  description: "Nels Martin's Personal Website."
 };
 
 export default function RootLayout({

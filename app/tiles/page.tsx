@@ -1,34 +1,30 @@
-"use client";
-// Idea: Start with stripes (continuous blocks), swap = invert as well
-import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Bold from "./Bold";
 import Lines from "./Lines";
 import Angles from "./Angles";
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Truchet Tiles',
-  description: 'Interactive tile patterns',
+  title: "Truchet Tiles",
+  description: "Interactive tile patterns",
   openGraph: {
-    title: 'Truchet Tiles',
-    description: 'Interactive tile patterns',
-    url: 'https://nelsmartin.com/tiles',
+    title: "Truchet Tiles",
+    description: "Interactive tile patterns",
+    url: "https://nelsmartin.com/tiles",
     images: [
       {
-        url: 'https://nelsmartin.com/tiles-preview.jpeg',
+        url: "https://nelsmartin.com/tiles-preview.jpeg",
         width: 882,
         height: 882,
-        alt: 'Tiles preview',
+        alt: "Tiles preview",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    images: ['https://yoursite.com/tiles-preview.jpg'],
+    card: "summary_large_image",
+    images: ["https://yoursite.com/tiles-preview.jpg"],
   },
-}
+};
 export default function Page() {
   return (
     <main className="min-h-screen w-full flex flex-col items-center space-y-10 bg-blue-100">
