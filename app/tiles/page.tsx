@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link"
 import Bold from "./Bold"
-import Lines from "./lines"
+import Lines from "./Lines"
 import Angles from "./Angles"
 
 export default function Page() {
