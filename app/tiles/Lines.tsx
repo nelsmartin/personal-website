@@ -33,7 +33,7 @@ export default function Lines() {
                     />
                 ))}
             </div>
-            <p className="text-4xl group-hover:font-bold group-hover:underline text-black">Lines</p>
+            <p className="text-xl sm:text-4xl group-hover:font-bold group-hover:underline text-black">Lines</p>
         </div>
         )
 }

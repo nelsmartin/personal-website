@@ -102,11 +102,18 @@ export default function Page() {
     <main className="min-h-screen w-full flex flex-col bg-blue-200">
       <div className="w-full">
         <Link href="/tiles">
-          <p className="inline-block text-black text-xl sm:text-3xl py-4 px-4 hover:font-bold hover:underline">
+          <p className="inline-block text-black text-xl sm:text-4xl py-4 px-4 hover:font-bold hover:underline">
             Back
           </p>
         </Link>
       </div>
+      <p className="sm:text-xl px-4">
+        Desktop: mouse over the tiles.
+      </p>
+      <p className="sm:text-xl px-4">
+        Mobile: tap and drag over the tiles. 
+
+      </p>
       <div className="flex justify-center">
         <div 
           ref={gridRef}

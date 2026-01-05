@@ -37,7 +37,7 @@ export default function Bold() {
                 ))}
               </div>
               <p 
-              className="text-4xl text-black group-hover:font-bold group-hover:underline">
+              className="text-xl sm:text-4xl text-black group-hover:font-bold group-hover:underline">
                 Bold
                 </p>
       </div>
