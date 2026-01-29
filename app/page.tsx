@@ -36,8 +36,9 @@ export default function Home() {
       <p className="max-w-prose">
         Hello! I'm Nels Martin, a senior at UW studying Electrical and Computer
         Engineering and an aspiring software engineer. This is my
-        work-in-progress personal website and portfolio. (Scroll down for a
-        surprise!)
+        work-in-progress personal website and portfolio. 
+         [<a className="text-blue-600"href="https://www.linkedin.com/in/nelsmartin/">LinkedIn</a>]
+         [<a className="text-blue-600"href="https://github.com/nelsmartin">GitHub</a>]
       </p>
       <Link href="/tiles">
         <p className="text-xl underline text-blue-600">
@@ -48,6 +49,7 @@ export default function Home() {
         <p className="text-xl underline text-blue-600">
           Project: Autogram Generator
         </p>
+
       </Link>
     </div>
   );
