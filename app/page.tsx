@@ -51,6 +51,10 @@ export default function Home() {
         </p>
 
       </Link>
+       <p className="text-7xl ">
+          ↓
+        </p>
+       
     </div>
   );
 }
