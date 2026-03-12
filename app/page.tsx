@@ -23,7 +23,8 @@ export default function Home() {
       </p>
       <p className="w-1/2 text-left text-xl font-medium mt-4">
         Hello! My name is Nels. I'm a senior at the University of Washington studying Electrical and 
-        Computer Engineering. For better or worse, I'm interested in everything I pay attention to.
+        Computer Engineering. I'm interested in formal methods and machine learning, especially
+        in the context of theorem proving.
       </p>
       <p className="w-1/2 text-left text-3xl font-medium mt-12">
         Projects
