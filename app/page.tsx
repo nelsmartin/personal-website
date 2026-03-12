@@ -1,46 +1,59 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
-const FACE_COUNT = 1479;
 
 export default function Home() {
-  const [matrix, setMatrix] = useState<boolean[]>(() =>
-    Array(FACE_COUNT).fill(false),
-  );
-  const [scroll, setScroll] = useState(0);
+  
 
-  useEffect(() => {
-    const scroll = () => setScroll(window.scrollY);
-    window.addEventListener("scroll", scroll);
-  }, []);
 
-  const getImage = (scrollValue: number) => {
-    if (scrollValue < 50) return "/nels1.jpeg";
-    if (scrollValue < 100) return "/nels2.jpeg";
-    if (scrollValue < 150) return "/nels3.jpeg";
-    return "/nels4.jpeg";
-  };
+
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center mb-200 space-y-10">
-      <Image
-        src={getImage(scroll)}
-        width={200}
-        height={100}
-        alt="Image of Nels"
-        className="mt-40"
-      />
-      <p className="max-w-prose">
-        Hello! I'm Nels Martin, a senior at UW studying Electrical and Computer
-        Engineering and an aspiring software engineer. This is my
-        work-in-progress personal website and portfolio. 
-         [<a className="text-blue-600"href="https://www.linkedin.com/in/nelsmartin/">LinkedIn</a>]
-         [<a className="text-blue-600"href="https://github.com/nelsmartin">GitHub</a>]
+    <div className="w-full min-h-screen flex flex-col items-center bg-amber-50">
+      <p className="w-1/2 text-7xl font-medium text-left mt-20">
+        Nels Martin
       </p>
-      <Link href="/tiles">
+      <p className="w-1/2 text-2xl font-medium text-left mt-4">
+        [<a href="https://www.linkedin.com/in/nelsmartin/" target="_blank">LinkedIn</a>]
+        [<a href="https://github.com/nelsmartin" target="_blank">GitHub</a>]
+        [<a href="https://substack.com/@nels130" target="_blank">Blog</a>]
+        [<a href="/resume" target="_blank">Resume</a>]
+      </p>
+      <p className="w-1/2 text-left text-xl font-medium mt-4">
+        Hello! My name is Nels. I'm a senior at the University of Washington studying Electrical and 
+        Computer Engineering. For better or worse, I'm interested in everything I pay attention to.
+      </p>
+      <p className="w-1/2 text-left text-3xl font-medium mt-12">
+        Projects
+      </p>
+      
+      <p className="w-1/2 text-left text-2xl font-medium mt-4">
+        [<a href="https://autogramgenerator.com/" target="_blank" className="font-bold">AutogramGenerator.com</a>] ( ← try it!)
+      </p>
+      <p className="w-1/2 text-left text-xl font-medium">
+        The first website that finds autogramic pangrams: sentences that describe their own letter counts.
+        Front end: React/TypeScript/Next.js/Vercel. Back end: Rosette/Docker/Google Cloud Run.
+      </p>
+       <p className="w-1/2 text-left text-2xl font-medium mt-8">
+        [<a href="https://github.com/therapyKG/507-project/tree/main" target="_blank" className="font-bold">Correctness Checking and Memory Planning for ML Workloads</a>]
+      </p>
+      <p className="w-1/2 text-left text-xl font-medium">
+        Final group project for the UW graduate course CSE 507. We designed a domain-specific language (DSL) to express 
+        training pipelines and model architectures of ML workloads, and used Racket and Rosette to analyze their 
+        parameterizations and implicit dependencies, producing a proof-of-concept model correctness checker 
+        and memory planner.
+      </p>
+       <p className="w-1/2 text-left text-2xl font-medium mt-8">
+        [<a href="/tiles" target="_blank" className="font-bold">Truchet Tiles</a>] ( ← try it!)
+      </p>
+      <p className="w-1/2 text-left text-xl font-medium mb-50">
+        Enormously entertaining interactive patterns. Programmed in React/TypeScript.
+      </p>
+      
+
+      {/* <Link href="/tiles">
         <p className="text-xl underline text-blue-600">
           Project: Truchet Tiles
         </p>
@@ -50,10 +63,7 @@ export default function Home() {
           Project: Autogram Generator
         </p>
 
-      </Link>
-       <p className="text-7xl ">
-          ↓
-        </p>
+      </Link> */}
        
     </div>
   );
