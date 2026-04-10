@@ -259,7 +259,7 @@ export default function RubiksCube() {
       </div>
     </div>
 
-      <div className="flex gap-2 mt-2">
+      <div className="flex gap-2 mt-2 text-2xl">
         <button onClick={() => setAscii(a => !a)}>ASCII {ascii ? "ON" : "OFF"}</button>
         {MOVE_KEYS.map(m => <button key={m} onClick={()=>handleMove(m)}>{m}</button>)}
       </div>
