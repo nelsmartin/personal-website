@@ -148,8 +148,12 @@ function AutoTextarea({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    el.style.height = "auto";
-    el.style.height = `${el.scrollHeight}px`;
+    const resize = () => {
+      el.style.height = "0px";
+      el.style.height = `${el.scrollHeight}px`;
+    };
+    const id = requestAnimationFrame(resize);
+    return () => cancelAnimationFrame(id);
   }, [value]);
   return (
     <textarea
